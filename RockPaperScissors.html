@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <script>
+
+        //Human's score 
+        var playerScore = 0;
+        // Computer's score
+        var compScore = 0
+
+        //Function to compute a random choice of rock,paper, or scissors by the computer. 
+        function computerChoice(foo) {
+            var randomNo = Math.floor((Math.random() * 3) + 1);
+            if (randomNo === 1) {
+                foo = "rock";
+            }
+            else if (randomNo === 2) {
+                foo = "paper";
+            }
+            else {
+                foo = "scissors";
+            }
+
+            alert("Computer chose " + foo);
+            return foo;
+  
+
+        }
+        //Function to play a round of Rock Paper Scissors.
+        function playRound(playerMove, compMove) {
+
+            //Sets the playerMove to whatever the user enters.
+            playerMove = prompt("Choose your weapon!").toLowerCase();
+
+            compMove = computerChoice(compMove);
+            if (playerMove === compMove) {
+
+                alert("The result is a tie!");
+            }
+
+            else if (playerMove === "rock") {
+
+                if (compMove === "scissors") {
+                    alert("Player chose Rock. Player wins!");
+                    playerScore = playerScore + 1;
+                }
+                else if (compMove === "paper") {
+                    alert("Computer chose paper. Computer wins...");
+                    compScore = compScore + 1;
+                }
+
+            }
+
+            else if (playerMove === "paper") {
+                if (compMove === "rock") {
+                    alert("Player chose paper. Player wins!");
+                    playerScore++;
+
+                }
+                else if (compMove === "scissors") {
+                    alert("Computer chose scissors. Computer wins...");
+                    compScore = compScore + 1;
+
+                }
+
+            }
+            else if (playerMove === "scissors") {
+
+                if (compMove === "rock") {
+                    alert("Computer chose rock. Comptuer wins...");
+                    compScore = compScore + 1;
+                }
+                else if (compMove === "paper") {
+                    alert("Player chose scissors. Scissors wins!");
+                    playerScore = playerScore + 1;
+
+                }
+
+            }
+
+
+
+        }
+
+
+        var reset = function () {
+
+            playerScore = 0;
+            compScore = 0;
+
+
+            alert("Choose your weapon!");
+        }
+
+        playRound();
+
+
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
