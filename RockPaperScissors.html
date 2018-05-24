@@ -81,7 +81,9 @@
 
             }
 
-
+            alert("Player Score: " + playerScore + "\n" +
+            "Computer Score: " + compScore);
+            
 
         }
 
@@ -95,7 +97,23 @@
             alert("Choose your weapon!");
         }
 
-        playRound();
+        function game() {
+            var count = 0;
+
+            while(count < 5) {
+                playRound();
+                count++;
+            }
+
+            alert("Game Over! Final Score: " + "\n" +
+            "Player Score: " + playerScore + "\n" +
+            "Computer Score: " + compScore
+            );
+
+        
+        }
+
+        game();
 
 
 
